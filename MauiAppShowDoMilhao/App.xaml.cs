@@ -66,6 +66,102 @@ namespace MauiAppShowDoMilhao
                     new Alternativa { Correta = false, Descricao = "1400"},
                 }
             },
+            new Pergunta
+            {
+                Id = 6,
+                Enunciado = "O violoncelo é um tipo de instrumento de?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = true, Descricao = "CORDAS"},
+                    new Alternativa { Correta = false, Descricao = "SOPRO"},
+                    new Alternativa { Correta = false, Descricao = "PERCUSSÃO"},
+                    new Alternativa { Correta = false, Descricao = "REPERCUSSÃO"},
+                }
+            },
+            new Pergunta
+            {
+                Id = 7,
+                Enunciado = "Quantos dias tem um ano bissexto?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "364"},
+                    new Alternativa { Correta = false, Descricao = "365"},
+                    new Alternativa { Correta = true, Descricao = "366"},
+                    new Alternativa { Correta = false, Descricao = "367"},
+                }
+            },
+            new Pergunta
+            {
+                Id = 8,
+                Enunciado = "Qual cantor ficou conhecido como “o rei do rock”?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "FRANK SINATRA"},
+                    new Alternativa { Correta = false, Descricao = "LITTLE RICHARD"},
+                    new Alternativa { Correta = true, Descricao = "ELVIS PRESLEY"},
+                    new Alternativa { Correta = false, Descricao = "RICHIE VALENS"},
+                }
+            },
+            new Pergunta
+            {
+                Id = 9,
+                Enunciado = "Qual cantor é o pai da dupla Sandy e Júnior?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "ZEZÉ DI CAMARGO"},
+                    new Alternativa { Correta = false, Descricao = "LEONARDO"},
+                    new Alternativa { Correta = false, Descricao = "CHITÃOZINHO"},
+                    new Alternativa { Correta = true, Descricao = "XORORÓ"},
+                }
+            },
+            new Pergunta
+            {
+                Id = 10,
+                Enunciado = "Vatapá é uma comida típica de qual estado?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "PARANÁ"},
+                    new Alternativa { Correta = false, Descricao = "SANTA CATARINA"},
+                    new Alternativa { Correta = false, Descricao = "SÃO PAULO"},
+                    new Alternativa { Correta = true, Descricao = "BAHIA"},
+                }
+            },
+            new Pergunta
+            {
+                Id = 11,
+                Enunciado = "Capixaba é quem nasce em qual estado brasileiro?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = true, Descricao = "ESPÍRITO SANTO"},
+                    new Alternativa { Correta = false, Descricao = "RIO GRANDE DO NORTE"},
+                    new Alternativa { Correta = false, Descricao = "SANTA CATARINA"},
+                    new Alternativa { Correta = false, Descricao = "PARANÁ"},
+                }
+            },
+            new Pergunta
+            {
+                Id = 12,
+                Enunciado = "O dromedário tem quantas corcovas?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = true, Descricao = "UMA"},
+                    new Alternativa { Correta = false, Descricao = "DUAS"},
+                    new Alternativa { Correta = false, Descricao = "TRÊS"},
+                    new Alternativa { Correta = false, Descricao = "NENHUMA"},
+                }
+            },
+            new Pergunta
+            {
+                Id = 13,
+                Enunciado = "O dromedário tem quantas corcovas?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = true, Descricao = "UMA"},
+                    new Alternativa { Correta = false, Descricao = "DUAS"},
+                    new Alternativa { Correta = false, Descricao = "TRÊS"},
+                    new Alternativa { Correta = false, Descricao = "NENHUMA"},
+                }
+            },
 
         };
         public App()
