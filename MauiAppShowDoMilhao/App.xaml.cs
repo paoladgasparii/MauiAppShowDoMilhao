@@ -4,7 +4,7 @@ namespace MauiAppShowDoMilhao
 {
     public partial class App : Application
     {
-        List<Pergunta> perguntas_faceis = new()
+         static List<Pergunta> perguntas_faceis = new()
         {
             new Pergunta
             {
@@ -248,11 +248,11 @@ namespace MauiAppShowDoMilhao
             },
         };
 
-        List<Pergunta> perguntas_medias = new()
+        static List<Pergunta> perguntas_medias = new()
         {
             new Pergunta
             {
-                Id = 1,
+                Id = 21,
                 Enunciado = "Que planta era usada para fabricação de papel no antigo Egito?",
                 Alternativas = new ()
                 {
@@ -264,7 +264,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 2,
+                Id = 22,
                 Enunciado = "Quem é o parceiro de aventuras de Dom Quixote?",
                 Alternativas = new ()
                 {
@@ -276,7 +276,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 3,
+                Id = 23,
                 Enunciado = "Que país europeu tem como atração a tourada?",
                 Alternativas = new ()
                 {
@@ -288,7 +288,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 4,
+                Id = 24,
                 Enunciado = "Às margens de que riacho foi proclamada a Independência do Brasil?",
                 Alternativas = new ()
                 {
@@ -300,7 +300,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 5,
+                Id = 25,
                 Enunciado = "Em que continente se situa o rio Nilo?",
                 Alternativas = new ()
                 {
@@ -312,7 +312,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 6,
+                Id = 26,
                 Enunciado = "O que leva o sangue do coração para o corpo?",
                 Alternativas = new ()
                 {
@@ -324,7 +324,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 7,
+                Id = 27,
                 Enunciado = "Como é chamado o templo sagrado dos judeus?",
                 Alternativas = new ()
                 {
@@ -336,7 +336,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 8,
+                Id = 28,
                 Enunciado = "Qual é o dia da Padroeira do Brasil?",
                 Alternativas = new ()
                 {
@@ -348,7 +348,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 9,
+                Id = 29,
                 Enunciado = "O daltônico é deficiente em?",
                 Alternativas = new ()
                 {
@@ -360,7 +360,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 10,
+                Id = 30,
                 Enunciado = "Qual foi o último imperador do Brasil?",
                 Alternativas = new ()
                 {
@@ -372,7 +372,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 11,
+                Id = 31,
                 Enunciado = "Que animal é usado no jogo de pólo?",
                 Alternativas = new ()
                 {
@@ -384,7 +384,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 12,
+                Id = 32,
                 Enunciado = "Qual é o médico que mais utiliza o eletrocardiograma?",
                 Alternativas = new ()
                 {
@@ -396,7 +396,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 13,
+                Id = 33,
                 Enunciado = "O FBI é a polícia federal de qual país?",
                 Alternativas = new ()
                 {
@@ -408,7 +408,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 14,
+                Id = 34,
                 Enunciado = "O Coliseu é um monumento histórico de que cidade européia?",
                 Alternativas = new ()
                 {
@@ -420,7 +420,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 15,
+                Id = 35,
                 Enunciado = "Qual é o ponto mais alto da Terra?",
                 Alternativas = new ()
                 {
@@ -432,7 +432,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 16,
+                Id = 36,
                 Enunciado = "Qual é a raça do personagem principal do filme “Beethoven”?",
                 Alternativas = new ()
                 {
@@ -444,7 +444,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 17,
+                Id = 37,
                 Enunciado = "Qual é a sigla da Organização das Nações Unidas?",
                 Alternativas = new ()
                 {
@@ -456,7 +456,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 18,
+                Id = 38,
                 Enunciado = "Como é chamada a doença que causa perda desigual da melanina?",
                 Alternativas = new ()
                 {
@@ -468,7 +468,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 19,
+                Id = 39,
                 Enunciado = "No filme, quem era parceiro de crimes da Bonnie?",
                 Alternativas = new ()
                 {
@@ -480,7 +480,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 20,
+                Id = 40,
                 Enunciado = "Qual dessas cobras não é venenosa?",
                 Alternativas = new ()
                 {
@@ -491,11 +491,11 @@ namespace MauiAppShowDoMilhao
                 }
             },
         };
-        List<Pergunta> perguntas_dificeis = new()
+        static List<Pergunta> perguntas_dificeis = new()
         {
             new Pergunta
             {
-                Id = 1,
+                Id = 41,
                 Enunciado = "Onde nasceu Van Gogh, o grande pintor impressionista?",
                 Alternativas = new ()
                 {
@@ -507,7 +507,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 2,
+                Id = 42,
                 Enunciado = "Qual desses países não fica na Ásia?",
                 Alternativas = new ()
                 {
@@ -519,7 +519,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 3,
+                Id = 43,
                 Enunciado = "Qual é a primeira letra do alfabeto grego?",
                 Alternativas = new ()
                 {
@@ -531,7 +531,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 4,
+                Id = 44,
                 Enunciado = "Os nazistas foram julgados em:",
                 Alternativas = new ()
                 {
@@ -543,7 +543,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 5,
+                Id = 45,
                 Enunciado = "Que ramo da pecuária ocupase de bodes e cabras?",
                 Alternativas = new ()
                 {
@@ -555,7 +555,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 6,
+                Id = 46,
                 Enunciado = "Que conflito ideológico envolveu os EUA e a União Soviética?",
                 Alternativas = new ()
                 {
@@ -567,7 +567,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 7,
+                Id = 47,
                 Enunciado = "Qual produto gerou guerras e conflitos no século XX?",
                 Alternativas = new ()
                 {
@@ -579,7 +579,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 8,
+                Id = 48,
                 Enunciado = "Como é chamada a bola de gelo e poeira que orbita em torno do sol?",
                 Alternativas = new ()
                 {
@@ -591,7 +591,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 9,
+                Id = 49,
                 Enunciado = "Que figura mitológica é conhecida por sua força extraordinária?",
                 Alternativas = new ()
                 {
@@ -603,7 +603,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 10,
+                Id = 50,
                 Enunciado = "Que símbolo está desenhado no centro da bandeira Argentina?",
                 Alternativas = new ()
                 {
@@ -615,7 +615,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 11,
+                Id = 51,
                 Enunciado = "Quem construiu o primeiro telescópio astronômico completo?",
                 Alternativas = new ()
                 {
@@ -627,7 +627,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 12,
+                Id = 52,
                 Enunciado = "Em que ano foi inaugurada a estátua do Cristo Redentor no Rio de Janeiro?",
                 Alternativas = new ()
                 {
@@ -639,7 +639,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 13,
+                Id = 53,
                 Enunciado = "Qual é o exame que emite ondas sonoras para visualizar os órgãos?",
                 Alternativas = new ()
                 {
@@ -651,7 +651,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 14,
+                Id = 54,
                 Enunciado = "Quem escreveu “Dom Quixote”?",
                 Alternativas = new ()
                 {
@@ -663,7 +663,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 15,
+                Id = 55,
                 Enunciado = "Qual é o quarto planeta do sistema solar?",
                 Alternativas = new ()
                 {
@@ -675,7 +675,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 16,
+                Id = 56,
                 Enunciado = "A que país pertence a Groenlândia?",
                 Alternativas = new ()
                 {
@@ -687,7 +687,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 17,
+                Id = 57,
                 Enunciado = "Pablo Picasso foi um dos criadores do:",
                 Alternativas = new ()
                 {
@@ -699,7 +699,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 18,
+                Id = 58,
                 Enunciado = "Qual foi o primeiro presidente do Brasil eleito pelo povo?",
                 Alternativas = new ()
                 {
@@ -711,7 +711,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 19,
+                Id = 59,
                 Enunciado = "Como o rei francês Luis XVI e sua esposa Maria Antonieta morreram?",
                 Alternativas = new ()
                 {
@@ -723,7 +723,7 @@ namespace MauiAppShowDoMilhao
             },
             new Pergunta
             {
-                Id = 20,
+                Id = 60,
                 Enunciado = "Como é chamada a gravura impressa sobre pranchas de madeira?",
                 Alternativas = new ()
                 {
@@ -734,6 +734,33 @@ namespace MauiAppShowDoMilhao
                 }
             },
         };
+
+        public static Pergunta getRandomPerguntaFacil()
+        {
+            Random r = new Random();
+
+            int sorteado  = r.Next(1, perguntas_faceis.Count); 
+
+            return perguntas_faceis[sorteado];
+        }
+
+        public static Pergunta getRandomPerguntaMedia()
+        {
+            Random r = new Random();
+
+            int sorteado = r.Next(21, perguntas_medias.Count);
+
+            return perguntas_medias[sorteado];
+        }
+
+        public static Pergunta getRandomPerguntaDificil()
+        {
+            Random r = new Random();
+
+            int sorteado = r.Next(41, perguntas_dificeis.Count);
+
+            return perguntas_dificeis[sorteado];
+        }
 
         public App()
         {
