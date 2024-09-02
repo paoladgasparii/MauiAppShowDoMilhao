@@ -734,33 +734,173 @@ namespace MauiAppShowDoMilhao
                 }
             },
         };
+        static List<Pergunta> perguntas_finais = new()
+        {
+            new Pergunta
+            {
+                Id = 61,
+                Enunciado = "O que procurava Juan Ponce de Leon quando descobriu a Flórida?",
+                Alternativas = new ()
+                {
+                    new Alternativa{ Correta = false, Descricao = "A CIDADE PERDIDA DE OURO" },
+                    new Alternativa{ Correta = true, Descricao = "A FONTE DA JUVENTUDE" },
+                    new Alternativa{ Correta = false, Descricao = "UNICÓRNIOS" },
+                    new Alternativa{ Correta = false, Descricao = "SEU GATO" },
+                }
+            },
+            new Pergunta
+            {
+                Id = 62,
+                Enunciado = "Qual destes países não se situa no Equador?",
+                Alternativas = new ()
+                {
+                    new Alternativa{ Correta = false, Descricao = "QUÊNIA" },
+                    new Alternativa{ Correta = false, Descricao = "EQUADOR" },
+                    new Alternativa{ Correta = true, Descricao = "CHILE" },
+                    new Alternativa{ Correta = false, Descricao = "INDONÉSIA" },
+                }
+            },
+            new Pergunta
+            {
+                Id = 63,
+                Enunciado = "Como se chama o explorador de grutas e cavernas?",
+                Alternativas = new()
+                {
+                    new Alternativa{ Correta = true, Descricao = "ESPELEÓLOGO" },
+                    new Alternativa{ Correta = false, Descricao = "AGROSTÓLOGO" },
+                    new Alternativa{ Correta = false, Descricao = "PSICÓLOGO" },
+                    new Alternativa{ Correta = false, Descricao = "CAMPANÓLOGO" },
+                }
+            },
+            new Pergunta
+            {
+                Id = 64,
+                Enunciado = "O que o pintor Claude Monet representou em suas telas?",
+                Alternativas = new()
+                {
+                    new Alternativa{ Correta = true, Descricao = "OS JARDINS DE GIVERNY" },
+                    new Alternativa{ Correta = false, Descricao = "OS BISTRÔS DE PARIS" },
+                    new Alternativa{ Correta = false, Descricao = "CENAS DO MOULIN ROUGE" },
+                    new Alternativa{ Correta = false, Descricao = "PAISAGENS DA PROVENÇA" },
+                }
+            },
+            new Pergunta
+            {
+                Id = 65,
+                Enunciado = "A baleia está classificada em qual grupo de mamíferos?",
+                Alternativas = new()
+                {
+                    new Alternativa{ Correta = true, Descricao = "CETÁCEOS" },
+                    new Alternativa{ Correta = false, Descricao = "FELINOS" },
+                    new Alternativa{ Correta = false, Descricao = "SIRÊNIOS" },
+                    new Alternativa{ Correta = false, Descricao = "CARNÍVOROS" },
+                }
+            },
+            new Pergunta
+            {
+                Id = 66,
+                Enunciado = "Nova Caledônia faz parte da:",
+                Alternativas = new()
+                {
+                    new Alternativa{ Correta = false, Descricao = "MICRONÉSIA" },
+                    new Alternativa{ Correta = true, Descricao = "MELANÉSIA" },
+                    new Alternativa{ Correta = false, Descricao = "POLINÉSIA" },
+                    new Alternativa{ Correta = false, Descricao = "INDONÉSIA" },
+                }
+            },
+        };
+        static List<Pergunta> perguntas_sorteadas = new()
+        {
+            
+        };
 
         public static Pergunta getRandomPerguntaFacil()
         {
             Random r = new Random();
 
-            int sorteado  = r.Next(1, perguntas_faceis.Count); 
+            Pergunta pergunta_sorteada;
 
-            return perguntas_faceis[sorteado];
+            while (true)
+            {
+                int sorteado = r.Next(1, 20);
+
+                pergunta_sorteada = perguntas_faceis[sorteado];
+
+                if (!perguntas_sorteadas.Contains(pergunta_sorteada))
+                {
+                    perguntas_sorteadas.Add(pergunta_sorteada);
+                    break;
+                }
+            }
+
+            return pergunta_sorteada;
         }
 
         public static Pergunta getRandomPerguntaMedia()
         {
             Random r = new Random();
 
-            int sorteado = r.Next(21, perguntas_medias.Count);
+            Pergunta pergunta_sorteada;
 
-            return perguntas_medias[sorteado];
+            while (true)
+            {
+                int sorteado = r.Next(21, 40);
+
+                pergunta_sorteada = perguntas_medias[sorteado];
+
+                if (!perguntas_sorteadas.Contains(pergunta_sorteada))
+                {
+                    perguntas_sorteadas.Add(pergunta_sorteada);
+                    break;
+                }
+            }
+
+            return pergunta_sorteada;
         }
 
         public static Pergunta getRandomPerguntaDificil()
         {
             Random r = new Random();
 
-            int sorteado = r.Next(41, perguntas_dificeis.Count);
+            Pergunta pergunta_sorteada;
 
-            return perguntas_dificeis[sorteado];
+            while (true)
+            {
+                int sorteado = r.Next(41, 60);
+
+                pergunta_sorteada = perguntas_dificeis[sorteado];
+
+                if (!perguntas_sorteadas.Contains(pergunta_sorteada))
+                {
+                    perguntas_sorteadas.Add(pergunta_sorteada);
+                    break;
+                }
+            }
+
+            return pergunta_sorteada;
         }
+        public static Pergunta getRandomPerguntaFinal()
+        {
+            Random r = new Random();
+
+            Pergunta pergunta_sorteada;
+
+            while (true)
+            {
+                int sorteado = r.Next(61, 66);
+
+                pergunta_sorteada = perguntas_finais[sorteado];
+
+                if (!perguntas_sorteadas.Contains(pergunta_sorteada))
+                {
+                    perguntas_sorteadas.Add(pergunta_sorteada);
+                    break;
+                }
+            }
+
+            return pergunta_sorteada;
+        }
+
 
         public App()
         {

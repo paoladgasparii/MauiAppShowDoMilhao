@@ -2,8 +2,12 @@
 
 namespace MauiAppShowDoMilhao
 {
+
     public partial class MainPage : ContentPage
     {
+        double premio = 0;
+        int pergunta_count = 0;
+
         public MainPage()
         {
             InitializeComponent();
@@ -59,12 +63,35 @@ namespace MauiAppShowDoMilhao
             if (acertou)
             {
                 await DisplayAlert("ACERTOU!", resp, "OK");
-                this.BindingContext = App.getRandomPerguntaFacil();
-            } else
+                avanca_pergunta();
+
+            }
+            else
             {
                 await DisplayAlert("ERROU!", "Você perdeu", "OK");
             }
         }
 
+        void avanca_pergunta()
+        {
+            if (pergunta_count <= 5)
+            {
+                premio = premio + 1000;
+                this.BindingContext = App.getRandomPerguntaFacil();
+            }
+
+            if (pergunta_count > 5 && pergunta_count <= 10)
+            {
+                premio = premio + 10000;
+                this.BindingContext = App.getRandomPerguntaMedia();
+            }
+
+            if (pergunta_count > 10 && pergunta_count < 15)
+            {
+                premio = premio + 100000;
+                this.BindingContext = App.getRandomPerguntaDificil();
+            }
+        }
     }
 }
+
