@@ -822,7 +822,7 @@ namespace MauiAppShowDoMilhao
 
             while (true)
             {
-                int sorteado = r.Next(1, 20);
+                int sorteado = r.Next(0, perguntas_faceis.Count);
 
                 pergunta_sorteada = perguntas_faceis[sorteado];
 
@@ -844,7 +844,7 @@ namespace MauiAppShowDoMilhao
 
             while (true)
             {
-                int sorteado = r.Next(21, 40);
+                int sorteado = r.Next(0, perguntas_medias.Count);
 
                 pergunta_sorteada = perguntas_medias[sorteado];
 
@@ -866,7 +866,7 @@ namespace MauiAppShowDoMilhao
 
             while (true)
             {
-                int sorteado = r.Next(41, 60);
+                int sorteado = r.Next(0, perguntas_dificeis.Count);
 
                 pergunta_sorteada = perguntas_dificeis[sorteado];
 
@@ -887,7 +887,7 @@ namespace MauiAppShowDoMilhao
 
             while (true)
             {
-                int sorteado = r.Next(61, 66);
+                int sorteado = r.Next(0, perguntas_finais.Count);
 
                 pergunta_sorteada = perguntas_finais[sorteado];
 
