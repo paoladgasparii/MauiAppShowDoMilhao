@@ -12,7 +12,7 @@ namespace MauiAppShowDoMilhao
         public MainPage()
         {
             InitializeComponent();
-        
+
             this.BindingContext = App.getRandomPerguntaFacil();
 
             lbl_nivel.Text = "Fácil";
@@ -20,17 +20,16 @@ namespace MauiAppShowDoMilhao
             lbl_pergunta_numero.Text = pergunta_count.ToString();
 
             // Adiciona som
-            Stream track =
-                FileSystem.OpenAppPackageFileAsync("abertura-show-do-milhao.mp3").Result;
-            AudioManager.Current.CreatePlayer(track).Play();
+            //AudioManager.Current.CreatePlayer(
+                //FileSystem.OpenAppPackageFileAsync("abertura_jogo.mp3").Result).Play();
 
         }
-        private void toca_som()
+        private async void toca_som()
         {
             string track = "";
 
-            switch(pergunta_count)
-                {
+            switch (pergunta_count)
+            {
                 case 1:
                     track = "1000.wav";
                     break;
@@ -97,97 +96,121 @@ namespace MauiAppShowDoMilhao
             }
             AudioManager.Current.CreatePlayer(
                 FileSystem.OpenAppPackageFileAsync(track).Result).Play();
+        }
 
         private async void Button_Clicked_Proxima(object sender, EventArgs e)
         {
-            bool acertou = false;
-            string resp = "";
-            bool valor;
+                bool acertou = false;
+                string resp = "";
+                bool valor;
 
-            if (alt0.IsChecked)
-            {
-                if ((bool)alt0.Value)
+                if (alt0.IsChecked)
                 {
-                    acertou = true;
-                    resp = alt0.Content.ToString();
+                    if ((bool)alt0.Value)
+                    {
+                        acertou = true;
+                        resp = alt0.Content.ToString();
+                    }
+                }
+
+                if (alt1.IsChecked)
+                {
+                    if ((bool)alt1.Value)
+                    {
+                        acertou = true;
+                        resp = alt1.Content.ToString();
+                    }
+                }
+
+                if (alt2.IsChecked)
+                {
+                    if ((bool)alt2.Value)
+                    {
+                        acertou = true;
+                        resp = alt2.Content.ToString();
+                    }
+                }
+
+                if (alt3.IsChecked)
+                {
+                    if ((bool)alt3.Value)
+                    {
+                        acertou = true;
+                        resp = alt3.Content.ToString();
+                    }
+                }
+
+                if (acertou)
+                {
+                    Stream track = FileSystem.OpenAppPackageFileAsync("parabens.wav").Result;
+                    AudioManager.Current.CreatePlayer(track).Play();
+
+                    await DisplayAlert("ACERTOU!", resp, "OK");
+                    pergunta_count++;
+                    toca_som();
+                    avanca_pergunta();
+
+                }
+                else
+                {
+                    Stream track = FileSystem.OpenAppPackageFileAsync("errou.wav").Result;
+                    AudioManager.Current.CreatePlayer(track).Play();
+
+                    await DisplayAlert("ERROU!", "Você perdeu", "OK");
+                    premio = 0;
+                    pergunta_count = 1;
+                    toca_som();
+                    avanca_pergunta();
+
                 }
             }
 
-            if (alt1.IsChecked)
+            void avanca_pergunta()
             {
-                if ((bool)alt1.Value)
+                if (pergunta_count <= 5)
                 {
-                    acertou = true;
-                    resp = alt1.Content.ToString();
+                    premio = premio + 1000;
+                    this.BindingContext = App.getRandomPerguntaFacil();
+                    lbl_nivel.Text = "Fácil";
                 }
-            }
 
-            if (alt2.IsChecked)
-            {
-                if ((bool)alt2.Value)
+                if (pergunta_count == 6)
                 {
-                    acertou = true;
-                    resp = alt2.Content.ToString();
+                    premio = 10000;
+                    this.BindingContext = App.getRandomPerguntaMedia();
+                    lbl_nivel.Text = "Fácil";
                 }
-            }
 
-            if (alt3.IsChecked)
-            {
-                if ((bool)alt3.Value)
+                if (pergunta_count >= 7 && pergunta_count <= 10)
                 {
-                    acertou = true;
-                    resp = alt3.Content.ToString();
+                    premio = premio + 10000;
+                    this.BindingContext = App.getRandomPerguntaMedia();
+                    lbl_nivel.Text = "Médio";
                 }
-            }
 
-            if (acertou)
-            {
-                await DisplayAlert("ACERTOU!", resp, "OK");
-                pergunta_count++;
-                avanca_pergunta();
+                if (pergunta_count == 11)
+                {
+                    premio = 100000;
+                    this.BindingContext = App.getRandomPerguntaMedia();
+                    lbl_nivel.Text = "Difícil";
+                }
 
+                if (pergunta_count >= 12 && pergunta_count <= 15)
+                {
+                    premio = premio + 100000;
+                    this.BindingContext = App.getRandomPerguntaDificil();
+                    lbl_nivel.Text = "Difícil";
+                }
+                if (pergunta_count == 16)
+                {
+                    premio = 1000000;
+                    this.BindingContext = App.getRandomPerguntaFinal();
+                    lbl_nivel.Text = "Final";
+                }
+                lbl_premio.Text = premio.ToString("C");
+                lbl_pergunta_numero.Text = pergunta_count.ToString();
             }
-            else
-            {
-                await DisplayAlert("ERROU!", "Você perdeu", "OK");
-                premio = 0;
-                pergunta_count = 1;
-                avanca_pergunta();
-                
-            }
-        }
-
-        void avanca_pergunta()
-        {
-            if (pergunta_count <= 5)
-            {
-                premio = premio + 1000;
-                this.BindingContext = App.getRandomPerguntaFacil();
-                lbl_nivel.Text = "Fácil";
-            }
-
-            if (pergunta_count > 5 && pergunta_count <= 10)
-            {
-                premio = premio + 10000;
-                this.BindingContext = App.getRandomPerguntaMedia();
-                lbl_nivel.Text = "Médio";
-            }
-
-            if (pergunta_count > 10 && pergunta_count <= 15)
-            {
-                premio = premio + 100000;
-                this.BindingContext = App.getRandomPerguntaDificil();
-                lbl_nivel.Text = "Difícil";
-            }
-            if (pergunta_count > 15 && pergunta_count <= 16)
-            {
-                premio = 1000000;
-                this.BindingContext = App.getRandomPerguntaFinal();
-                lbl_nivel.Text = "Final";
-            }
-            lbl_premio.Text = premio.ToString("C");
-            lbl_pergunta_numero.Text = pergunta_count.ToString();
         }
     }
-}
+
 
