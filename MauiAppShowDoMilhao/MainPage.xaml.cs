@@ -19,9 +19,9 @@ namespace MauiAppShowDoMilhao
             lbl_premio.Text = premio.ToString("C");
             lbl_pergunta_numero.Text = pergunta_count.ToString();
 
-            // Adiciona som
-            //AudioManager.Current.CreatePlayer(
-                //FileSystem.OpenAppPackageFileAsync("abertura_jogo.mp3").Result).Play();
+            //Adiciona som
+            Stream track = FileSystem.OpenAppPackageFileAsync("abertura.mp3").Result;
+            AudioManager.Current.CreatePlayer(track).Play();
 
         }
         private async void toca_som()
@@ -70,7 +70,7 @@ namespace MauiAppShowDoMilhao
                     track = "50000.wav";
                     break;
                 case 11:
-                    track = "100000.wav";
+                    track = "100000b.wav";
                     break;
 
                 case 12:
@@ -178,7 +178,7 @@ namespace MauiAppShowDoMilhao
                 {
                     premio = 10000;
                     this.BindingContext = App.getRandomPerguntaMedia();
-                    lbl_nivel.Text = "Fácil";
+                    lbl_nivel.Text = "Médio";
                 }
 
                 if (pergunta_count >= 7 && pergunta_count <= 10)
@@ -191,7 +191,7 @@ namespace MauiAppShowDoMilhao
                 if (pergunta_count == 11)
                 {
                     premio = 100000;
-                    this.BindingContext = App.getRandomPerguntaMedia();
+                    this.BindingContext = App.getRandomPerguntaDificil();
                     lbl_nivel.Text = "Difícil";
                 }
 
