@@ -97,6 +97,10 @@ namespace MauiAppShowDoMilhao
             AudioManager.Current.CreatePlayer(
                 FileSystem.OpenAppPackageFileAsync(track).Result).Play();
         }
+        private async void Button_Clicked_Parar(object sender, EventArgs e)
+        {
+            Application.Current.Quit();
+        }
 
         private async void Button_Clicked_Proxima(object sender, EventArgs e)
         {
