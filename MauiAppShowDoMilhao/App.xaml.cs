@@ -906,7 +906,18 @@ namespace MauiAppShowDoMilhao
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pt-BR");
+
+            MainPage = new NavigationPage(new MainPage());
+        }
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
+            var window = base.CreateWindow(activationState);
+
+            window.Width = 400;
+            window.Height = 600;
+
+            return window;
         }
     }
 }

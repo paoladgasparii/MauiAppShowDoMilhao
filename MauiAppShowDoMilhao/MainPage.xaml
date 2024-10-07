@@ -3,108 +3,114 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppShowDoMilhao.MainPage"
              Title=" "
-             BackgroundColor="Blue">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#00008B">
 
-    <StackLayout Spacing="15" Padding="20" VerticalOptions="FillAndExpand">
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
 
-        <ContentPage.Resources>
-            <Style TargetType="RadioButton">
-                <Setter Property="VisualStateManager.VisualStateGroups">
-                    <VisualStateGroupList>
-                        <VisualStateGroup x:Name="CheckedStates">
-                            <VisualState x:Name="Checked">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="Green"/>
-                                    <Setter Property="Opacity" Value="1"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Unchecked">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="Red"/>
-                                    <Setter Property="Opacity" Value="0.5"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateGroupList>
-                </Setter>
-            </Style>
-        </ContentPage.Resources>
+        </Style>
 
-        <StackLayout Spacing="10" Padding="10">
+        <Style TargetType="RadioButton">
+            
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderColor" Value="DarkRed"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="WidthRequest" Value="360"/>
+            <Setter Property="BackgroundColor" Value="#8B0000"/>
 
-            <Grid ColumnDefinitions="*, *, *"
+
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CheckedStates">
+                        <VisualState x:Name="Checked">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="Green"/>
+                                <Setter Property="Opacity" Value="1"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Unchecked">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="Red"/>
+                                <Setter Property="Opacity" Value="0.5"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout Spacing="10" Padding="10" VerticalOptions="Center">
+
+        <Grid ColumnDefinitions="*, *, *"
               RowDefinitions="Auto, Auto"
               Padding="0, 10, 0, 10">
 
-                <Label Grid.Column="0" Text="Prêmio:" FontSize="16" TextColor="White" FontAttributes="Bold"/>
-                <Label Grid.Column="1" Text="Nível:" FontSize="16" TextColor="White" FontAttributes="Bold"/>
-                <Label Grid.Column="2" Text="Número da pergunta:" FontSize="16" TextColor="White" FontAttributes="Bold"/>
+            <Label Grid.Column="0" Text="Prêmio:" FontSize="16" TextColor="White" FontAttributes="Bold"/>
+            <Label Grid.Column="1" Text="Nível:" FontSize="16" TextColor="White" FontAttributes="Bold"/>
+            <Label Grid.Column="2" Text="Número da pergunta:" FontSize="16" TextColor="White" FontAttributes="Bold"/>
 
-                <Label Grid.Column="0" Grid.Row="1"  x:Name="lbl_premio" FontSize="16" TextColor="White" FontAttributes="Bold"/>
-                <Label Grid.Column="1" Grid.Row="1"  x:Name="lbl_nivel" FontSize="16" TextColor="White" FontAttributes="Bold"/>
-                <Label Grid.Column="2" Grid.Row="1"  x:Name="lbl_pergunta_numero" FontSize="16" TextColor="White" FontAttributes="Bold"/>
+            <Label Grid.Column="0" Grid.Row="1"  x:Name="lbl_premio" FontSize="16" TextColor="White" FontAttributes="Bold"/>
+            <Label Grid.Column="1" Grid.Row="1"  x:Name="lbl_nivel" FontSize="16" TextColor="White" FontAttributes="Bold"/>
+            <Label Grid.Column="2" Grid.Row="1"  x:Name="lbl_pergunta_numero" FontSize="16" TextColor="White" FontAttributes="Bold"/>
 
-            </Grid>
+        </Grid>
 
-            <Frame BackgroundColor="DarkBlue" CornerRadius="10" Padding="10">
-                <Label Text="{Binding Enunciado}"
+        <Frame BackgroundColor="#0000CD" CornerRadius="10" Padding="10">
+            <Label Text="{Binding Enunciado}"
                    FontSize="16" 
                    TextColor="White"
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Start"
                    VerticalTextAlignment="Center"/>
-            </Frame>
+        </Frame>
 
-            <StackLayout>
-                <Frame BorderColor="DarkRed" CornerRadius="10" Padding="10" BackgroundColor="Red">
-                    <RadioButton x:Name="alt0"
+        <StackLayout>
+
+            <RadioButton x:Name="alt0"
                              Content="{Binding Path=Alternativas[0].Descricao}"
                              Value="{Binding Path=Alternativas[0].Correta}"
-                             TextColor="White" FontSize="18"
-                             GroupName="Alternativas"/>
-                </Frame>
+                             TextColor="White" FontSize="16" />
 
-                <Frame BorderColor="DarkRed" CornerRadius="10" Padding="10" BackgroundColor="Red">
-                    <RadioButton x:Name="alt1"
+
+
+            <RadioButton x:Name="alt1"
                              Content="{Binding Path=Alternativas[1].Descricao}"
                              Value="{Binding Path=Alternativas[1].Correta}"
-                             TextColor="White" FontSize="18"
-                             GroupName="Alternativas"/>
-                </Frame>
+                             TextColor="White" FontSize="16" />
 
-                <Frame BorderColor="DarkRed" CornerRadius="10" Padding="10" BackgroundColor="Red">
-                    <RadioButton x:Name="alt2"
+
+
+            <RadioButton x:Name="alt2"
                              Content="{Binding Path=Alternativas[2].Descricao}"
                              Value="{Binding Path=Alternativas[2].Correta}"
-                             TextColor="White" FontSize="18"
-                             GroupName="Alternativas"/>
-                </Frame>
+                             TextColor="White" FontSize="16" />
 
-                <Frame BorderColor="DarkRed" CornerRadius="10" Padding="10" BackgroundColor="Red">
-                    <RadioButton x:Name="alt3"
+
+
+            <RadioButton x:Name="alt3"
                              Content="{Binding Path=Alternativas[3].Descricao}"
                              Value="{Binding Path=Alternativas[3].Correta}"
-                             TextColor="White" FontSize="18"
-                             GroupName="Alternativas"/>
-                </Frame>
-            </StackLayout>
+                             TextColor="White" FontSize="16" />
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
-                <Button Text="Parar"
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+            <Button Text="Parar"
                     BackgroundColor="Red"
                     TextColor="White"
                     WidthRequest="90"
                     CornerRadius="15"
                     Clicked="Button_Clicked_Parar"/>
 
-                <Button Text="Próxima"
+            <Button Text="Próxima"
                     BackgroundColor="Green"
                     TextColor="White"
                     WidthRequest="90"
                     CornerRadius="15"
                     Clicked="Button_Clicked_Proxima"/>
-            </StackLayout>
-
         </StackLayout>
 
     </StackLayout>
