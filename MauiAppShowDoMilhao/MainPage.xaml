@@ -69,28 +69,28 @@
 
         <StackLayout>
 
-            <RadioButton x:Name="alt0"
+            <RadioButton x:Name="alt0" IsVisible="False"
                              Content="{Binding Path=Alternativas[0].Descricao}"
                              Value="{Binding Path=Alternativas[0].Correta}"
                              TextColor="White" FontSize="16" />
 
 
 
-            <RadioButton x:Name="alt1"
+            <RadioButton x:Name="alt1" IsVisible="False"
                              Content="{Binding Path=Alternativas[1].Descricao}"
                              Value="{Binding Path=Alternativas[1].Correta}"
                              TextColor="White" FontSize="16" />
 
 
 
-            <RadioButton x:Name="alt2"
+            <RadioButton x:Name="alt2" IsVisible="False"
                              Content="{Binding Path=Alternativas[2].Descricao}"
                              Value="{Binding Path=Alternativas[2].Correta}"
                              TextColor="White" FontSize="16" />
 
 
 
-            <RadioButton x:Name="alt3"
+            <RadioButton x:Name="alt3" IsVisible="False"
                              Content="{Binding Path=Alternativas[3].Descricao}"
                              Value="{Binding Path=Alternativas[3].Correta}"
                              TextColor="White" FontSize="16" />

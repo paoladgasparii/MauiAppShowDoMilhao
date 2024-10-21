@@ -3,7 +3,6 @@ using Plugin.Maui.Audio;
 
 namespace MauiAppShowDoMilhao
 {
-
     public partial class MainPage : ContentPage
     {
         double premio = 1000;
@@ -20,10 +19,51 @@ namespace MauiAppShowDoMilhao
             lbl_pergunta_numero.Text = pergunta_count.ToString();
 
             //Adiciona som
-            Stream track = FileSystem.OpenAppPackageFileAsync("abertura.mp3").Result;
-            AudioManager.Current.CreatePlayer(track).Play();
+            //Stream track = FileSystem.OpenAppPackageFileAsync("abertura.mp3").Result;
+            //AudioManager.Current.CreatePlayer(track).Play();
 
         }
+
+        protected async override void OnAppearing()
+        {
+            alt0.IsVisible = false;
+            alt1.IsVisible = false;
+            alt2.IsVisible = false;
+            alt3.IsVisible = false;
+
+            int tempo = 500;
+
+            await alt0.TranslateTo(-1000, 0, 10, Easing.CubicOut);
+            await Task.Delay(tempo);
+            alt0.IsVisible = true;
+            await alt0.TranslateTo(0, 0, 350, Easing.CubicOut);
+
+
+
+
+            await alt1.TranslateTo(-1000, 0, 10, Easing.CubicOut);
+            await Task.Delay(tempo);
+            alt1.IsVisible = true;
+            await alt1.TranslateTo(0, 0, 350, Easing.CubicOut);
+
+
+
+
+            await alt2.TranslateTo(-1000, 0, 10, Easing.CubicOut);
+            await Task.Delay(tempo);
+            alt2.IsVisible = true;
+            await alt2.TranslateTo(0, 0, 350, Easing.CubicOut);
+
+
+
+
+            await alt3.TranslateTo(-1000, 0, 10, Easing.CubicOut);
+            await Task.Delay(tempo);
+            alt3.IsVisible = true;
+            await alt3.TranslateTo(0, 0, 350, Easing.CubicOut);
+        }
+
+
         private async void toca_som()
         {
             string track = "";
@@ -99,7 +139,9 @@ namespace MauiAppShowDoMilhao
         }
         private async void Button_Clicked_Parar(object sender, EventArgs e)
         {
-            Application.Current.Quit();
+            premio = 0;
+            pergunta_count = 1;
+            avanca_pergunta();
         }
 
         private async void Button_Clicked_Proxima(object sender, EventArgs e)
@@ -153,7 +195,7 @@ namespace MauiAppShowDoMilhao
                     pergunta_count++;
                     toca_som();
                     avanca_pergunta();
-
+                    this.OnAppearing();
                 }
                 else
                 {
