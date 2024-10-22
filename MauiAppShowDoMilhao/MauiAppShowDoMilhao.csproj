@@ -57,6 +57,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\showdomilhao1.png" />
 	  <None Remove="Resources\raw\1000.wav" />
 	  <None Remove="Resources\raw\10000.wav" />
 	  <None Remove="Resources\raw\1000000.wav" />
